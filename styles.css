@@ -1,0 +1,355 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #f8f9fa;
+}
+
+/* Header Styles */
+.top-bar {
+    background: #002147;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+.toggle-btn {
+            font-size: 28px;
+            cursor: pointer;
+        }
+        .sidebar {
+            position: fixed;
+            right: -250px;
+            top: 0;
+            width: 250px;
+            height: 57%;
+            background: white;
+            padding-top: 60px;
+            transition: 0.4s;
+            border-radius: 5px;
+            box-shadow: -3px 0 10px rgb(2, 145, 255);
+        }
+        .sidebar.active {
+            right: 0;
+        }
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 25px;
+            cursor: pointer;
+            color: #0056b3;
+        }
+        .sidebar a {
+            display: block;
+            color: #333;
+            padding: 15px;
+            text-decoration: none;
+            font-size: 20px;
+            border-bottom: 1px solid #dddddd;
+        }
+        .sidebar a:hover {
+            background: #e1ff5d;
+            color: #0028ef;
+        }
+       
+        .sidebar a i {
+            margin-right: 10px;
+            color: #0056b3;
+        }
+        .section {
+            padding: 50px;
+            text-align: center;
+        }
+        .about, .courses, .events, .contact {
+            background: #e9ecef;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #003366;
+    padding: 15px 20px;
+    position: relative;
+}
+
+.logo {
+    width: 90px;
+    position: absolute;
+    left: 20px;
+    border-radius:1%;
+    border-color: #fafafb;
+    margin-bottom: 40px;
+}
+
+.menu-button {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links li {
+    margin: 0 15px;
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    background: #ff6600;
+    border-radius: 5px;
+}
+
+/* Dropdown Menu */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Hero Image */
+.school-image-container {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.school-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+@media (max-width: 768px) {
+    .school-image-container {
+        height: 300px;
+    }
+}
+
+/* About Section Responsive */
+#about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 50px;
+}
+
+#about p {
+    max-width: 800px;
+}
+
+/* Sections */
+.section {
+    padding: 50px;
+    text-align: center;
+    transition: 0.3s;
+    background: white;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section:hover {
+    background: #eef2f3;
+}
+
+.apply-btn {
+    background: #ff6600;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.apply-btn:hover {
+    background: #cc5200;
+}
+
+/* Sign-in Button Responsive */
+.sign-in {
+    background: transparent;
+    border: 2px solid #003366;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.sign-in:hover {
+    background: white;
+    color: #003366;
+}
+
+/* Faculty Images */
+.faculty-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Faculty cards ke beech space */
+    flex-wrap: wrap; /* Responsive banane ke liye */
+}
+
+.faculty-card {
+    text-align: center;
+    transition: 0.3s;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.faculty-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.faculty-card p {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Hover Effect */
+.faculty-card:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+.faculty-card img:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+}
+
+
+/* Footer */
+footer {
+    background: #002147;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+.social-media {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    flex-wrap: wrap;
+    gap:15px
+    
+}
+
+.social-media li {
+    margin: 5px;
+}
+
+.social-media a {
+    text-decoration: none;
+    color: rgb(255, 253, 253);
+    font-size: 19px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px; /* Icon ke liye circular shape */
+    height: 40px;
+    border-radius: 50%;
+    transition: 0.3s; /* Smooth hover effect */
+}
+.social-media a:hover {
+    background: #012340;
+    border: 2px solid #ff6600; /* Border color highlight */
+    transform: scale(1.2); /* Icon enlarge effect */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        position: static;
+        margin: 10px 0;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #cfd5dc;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 60px;
+        text-align: center;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .school-image-container {
+        height: 250px;
+    }
+
+    .section {
+        padding: 30px;
+    }
+
+    .social-media {
+        flex-direction: column;
+        align-items: center;
+    }
+}

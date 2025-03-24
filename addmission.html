@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Application Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* Global Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Background with Image & Gradient Overlay */
+        body {
+            
+            background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
+                        url('photos/collegeimg.webp') no-repeat center center/cover;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 10px;
+            overflow: hidden;
+        }
+
+        /* Form Container - Glassmorphism Effect */
+        .container {
+            background: rgba(13, 118, 255, 0.3);
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+            position: relative;
+        }
+
+        /* Hover Effect */
+        .container:hover {
+            transform: scale(1.02);
+        }
+
+        /* Heading */
+        h2 {
+            font-size: 28px;
+            color: #FFCC00;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        /* Input Fields */
+        input, select, textarea {
+            width: 100%;
+            padding: 14px;
+            margin: 12px 0;
+            border: 1px solid #ffffff;
+            border-radius: 10px;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.8);
+            color: #333;
+            transition: 0.3s;
+        }
+
+        /* Placeholder Styling */
+        input::placeholder, textarea::placeholder {
+            color: #555;
+        }
+
+        /* Focus Effect */
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border: 2px solid #FFCC00;
+            box-shadow: 0px 0px 10px rgba(255, 204, 0, 0.8);
+        }
+
+        /* File Input */
+        input[type="file"] {
+            background: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        /* Submit Button */
+        .btn {
+            background: #ff6600;
+            color: #fff;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Button Hover Effect */
+        .btn:hover {
+            background: #ff6600;
+            transform: scale(1.05);
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            background: #28a745;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        /* Payment Section */
+        .payment-options {
+            margin-top: 20px;
+            display: none;
+            background: #f7c7c7;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        .payment-option {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #ff6600;
+            border-radius: 10px;
+            color: #fff;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .payment-option:hover {
+            transform: scale(1.05);
+            background-color: #ff6600;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .container {
+                max-width: 90%;
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            input, select, textarea {
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            .btn {
+                font-size: 16px;
+                padding: 12px;
+            }
+
+            .payment-option {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Admission Application Form</h2>
+        <form id="admissionForm">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+
+            <select name="course" required>
+                <option value="">Select Course</option>
+                <optgroup label="B.Tech">
+                    <option value="CSE">Computer Science and Engineering (CSE)</option>
+                    <option value="IT">Information Technology (IT)</option>
+                    <option value="ME">Mechanical Engineering (ME)</option>
+                    <option value="CE">Civil Engineering (CE)</option>
+                    <option value="EE">Electrical Engineering (EE)</option>
+                    <option value="ECE">Electronics and Communication Engineering (ECE)</option>
+                    <option value="AI_ML">Artificial Intelligence & Machine Learning (AI & ML)</option>
+                    <option value="Data_Science">Data Science & Engineering</option>
+                    <option value="Cyber_Security">Cyber Security</option>
+                </optgroup>
+                <optgroup label="MBA">
+                    <option value="MBA_Finance">MBA - Finance</option>
+                    <option value="MBA_Marketing">MBA - Marketing</option>
+                    <option value="MBA_HRM">MBA - Human Resource Management (HRM)</option>
+                    <option value="MBA_Operations">MBA - Operations Management</option>
+                    <option value="MBA_IT">MBA - Information Technology (IT) Management</option>
+                    <option value="MBA_Business_Analytics">MBA - Business Analytics & Data Science</option>
+                </optgroup>
+                <optgroup label="MCA">
+                    <option value="MCA_General">MCA - General</option>
+                    <option value="MCA_AI_ML">MCA - Artificial Intelligence & Machine Learning</option>
+                    <option value="MCA_Cyber_Security">MCA - Cyber Security & Forensics</option>
+                    <option value="MCA_Data_Science">MCA - Data Science & Big Data Analytics</option>
+                </optgroup>
+                <optgroup label="B.Sc">
+                    <option value="BSc_IT">B.Sc - Information Technology</option>
+                    <option value="BSc_CS">B.Sc - Computer Science</option>
+                    <option value="BSc_AI_ML">B.Sc - Artificial Intelligence & Machine Learning</option>
+                    <option value="BSc_Cyber_Security">B.Sc - Cyber Security & Ethical Hacking</option>
+                </optgroup>
+                <optgroup label="Diploma">
+                    <option value="Diploma_IT">Diploma in Information Technology</option>
+                    <option value="Diploma_CS">Diploma in Computer Science</option>
+                    <option value="Diploma_AI_ML">Diploma in Artificial Intelligence & Machine Learning</option>
+                    <option value="Diploma_Cyber_Security">Diploma in Cyber Security & Ethical Hacking</option>
+                </optgroup>
+                <optgroup label="Pharmacy">
+                    <option value="D.Pharm">Diploma in Pharmacy (D.Pharm)</option>
+                    <option value="B.Pharm">Bachelor of Pharmacy (B.Pharm)</option>
+                    <option value="M.Pharm_Pharmaceutics">Master of Pharmacy (M.Pharm) - Pharmaceutics</option>
+                    <option value="M.Pharm_Pharmacology">Master of Pharmacy (M.Pharm) - Pharmacology</option>
+                </optgroup>
+            </select>
+            
+            <input type="file" name="documents" required>
+            <textarea name="message" rows="4" placeholder="Why do you want to join?" required></textarea>
+            <button type="submit" class="btn">Apply Now</button>
+        </form>
+
+        <!-- Success Message -->
+        <div id="successMessage" class="success-message">
+            ✅ Application Submitted Successfully! Please proceed with payment.
+        </div>
+
+        <!-- Payment Options Section -->
+        <div id="paymentSection" class="payment-options">
+            <h3>Choose Payment Method</h3>
+            <div class="payment-option" id="paypalOption">
+                <i class="fab fa-paypal"></i> Pay with PayPal
+            </div>
+            <div class="payment-option" id="cardOption">
+                <i class="fas fa-credit-card"></i> Pay with Credit/Debit Card
+            </div>
+            <div class="payment-option" id="upiOption">
+                <i class="fas fa-mobile-alt"></i> Pay with UPI
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("admissionForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            document.getElementById("successMessage").style.display = "block";
+            document.getElementById("paymentSection").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("successMessage").style.display = "none";
+            }, 3000);
+            this.reset();
+        });
+
+        // PayPal Button Integration (Mock)
+        document.getElementById("paypalOption").addEventListener("click", function() {
+            window.location.href = 'https://www.paypal.com'; // Redirect to PayPal for payment
+        });
+
+        // Credit/Debit Card Payment (Mock)
+        document.getElementById("cardOption").addEventListener("click", function() {
+            alert("Redirecting to secure payment gateway for card payment...");
+            // Add code for redirecting to a card payment gateway
+        });
+
+        // UPI Payment (Mock)
+        document.getElementById("upiOption").addEventListener("click", function() {
+            alert("UPI Payment - Please complete the transaction using your UPI app.");
+            // Add UPI integration logic here for users in India
+        });
+    </script>
+</body>
+</html>

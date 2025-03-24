@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owner Profile & College Details</title>
+
+    <!-- Font Awesome 6.5.1 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: #f8f9fa;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: url('photos/kit.webp') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 33, 71, 0.6);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .owner-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid white;
+        }
+
+        /* About College */
+        .about-college {
+            max-width: 700px;
+            margin: auto;
+            text-align: center;
+            padding: 20px;
+        }
+        .more-info {
+            display: none;
+            text-align: left;
+            margin-top: 15px;
+        }
+        .about-college button {
+            background: #ff6600;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 15px;
+        }
+        .about-college button:hover {
+            background: #cc5200;
+            transform: scale(1.05);
+        }
+
+        /* Contact Form */
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact input, .contact textarea {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .contact button {
+            background: #ff6600;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            border: none;
+        }
+        .contact button:hover {
+            background: #cc5200;
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 5px;
+            width: 80%;
+            text-align: center;
+            margin: 15px auto;
+            border: 1px solid #c3e6cb;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background: #002147;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <img src="photos/vinay.jpeg" alt="Owner" class="owner-photo">
+            <h1>Dr. Vinay Jaiswal</h1>
+            <p>Founder & Visionary Leader of Kanpur Institute of Technology</p>
+        </div>
+    </header>
+
+    <section class="about-college">
+        <h2>About Our College</h2>
+        <p>Kanpur Institute of Technology (KIT) is a premier institution known for excellence in education and research.</p>
+
+        <div class="more-info" id="moreInfo">
+            <h3>🏫 Campus & Infrastructure</h3>
+            <p>Our campus spans **25 acres**, featuring state-of-the-art laboratories, research centers, and smart classrooms. The college is equipped with **Wi-Fi-enabled** campus, modern hostels, and extensive sports facilities.</p>
+
+            <h3>🎓 Academic Excellence</h3>
+            <p>KIT offers **B.Tech, M.Tech, MBA, MCA, BBA, BCA, and other programs** affiliated with AKTU. With highly qualified faculty and a student-centered approach, the institution focuses on skill development and innovation.</p>
+
+            <h3>💡 Research & Innovations</h3>
+            <p>KIT has contributed **500+ Research Publications** in international and national journals, fostering innovation through research grants and collaborations.</p>
+
+            <h3>🏅 Achievements & Rankings</h3>
+            <ul>
+                <li>🏆 **Ranked Among Top Engineering Colleges in India**</li>
+                <li>📖 **AICTE-Certified Research Center**</li>
+                <li>🎓 **10,000+ Alumni Network Across the Globe**</li>
+            </ul>
+
+            <h3>💼 Placement & Corporate Tie-Ups</h3>
+            <p>KIT ensures **90%+ placements** in top companies like **TCS, Infosys, Wipro, HCL, Amazon, Capgemini, and Accenture**. With dedicated training programs, we bridge the gap between academics and industry.</p>
+
+            <h3>🌍 Global Exposure & Alumni Network</h3>
+            <p>Our alumni are placed across **30+ countries** in Fortune 500 companies, contributing significantly in various industries.</p>
+            <section class="section" id="facilities">
+                <h2>🏫 Facilities</h2>
+                <ul>
+                    <li>✅ Smart Classrooms & Labs</li>
+                    <li>✅ Wi-Fi Enabled Campus</li>
+                    <li>✅ Sports Complex & Gym</li>
+                </ul>
+            </section>
+        </div>
+
+        <button id="toggleButton">Read More</button>
+    </section>
+
+    <section class="contact">
+        <h2>Contact Us</h2>
+
+        <!-- Success Message -->
+        <div class="success-message" id="successMessage">
+            ✅ Your message has been successfully sent!
+        </div>
+
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message"></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Kanpur Institute of Technology. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.getElementById("toggleButton").addEventListener("click", function() {
+            let moreInfo = document.getElementById("moreInfo");
+            moreInfo.style.display = moreInfo.style.display === "block" ? "none" : "block";
+            this.textContent = moreInfo.style.display === "block" ? "Read Less" : "Read More";
+        });
+
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            document.getElementById("successMessage").style.display = "block";
+            setTimeout(() => { document.getElementById("successMessage").style.display = "none"; }, 3000);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owner Profile</title>
+
+    <!-- Font Awesome 6.5.1 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: #f8f9fa;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: url('photos/kit.webp') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 33, 71, 0.6);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .owner-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid white;
+        }
+
+        /* Social Media Icons */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+        .social-links .icon {
+            font-size: 24px;
+            color: white;
+            text-decoration: none;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 2px solid white;
+            transition: all 0.3s ease;
+        }
+        .social-links .icon:hover {
+            background: white;
+            color: #002147;
+            transform: scale(1.1);
+        }
+
+        /* Sections */
+        section {
+            padding: 50px 20px;
+            text-align: center;
+            background: white;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .achievements ul {
+            list-style: none;
+            padding: 0;
+        }
+        .achievements li {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        .testimonials {
+            background: #eef2f3;
+        }
+        .testimonial {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            width: 80%;
+        }
+
+        /* Contact Form */
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact input, .contact textarea {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .contact button {
+            background: #ff6600;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            border: none;
+        }
+        .contact button:hover {
+            background: #cc5200;
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 5px;
+            width: 80%;
+            text-align: center;
+            margin: 15px auto;
+            border: 1px solid #c3e6cb;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background: #002147;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <img src="photos/vinay.jpeg" alt="Owner" class="owner-photo">
+            <h1>Dr. Vinay Jaiswal</h1>
+            <p>Founder & Visionary Leader of KANPUR INSTITUTE OF TECHNOLOGY College</p>
+
+            <!-- Social Media Icons -->
+            <div class="social-links">
+                <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="icon"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="icon"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" class="icon"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#" class="icon"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" class="icon"><i class="fa-brands fa-telegram"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <section class="bio">
+        <h2>About the Owner</h2>
+        <p>Dr. Vinay Jaiswal is an esteemed educationist with 25+ years of experience in academic leadership...</p>
+    </section>
+
+    <section class="achievements">
+        <h2>Milestones & Achievements</h2>
+        <ul>
+            <li>🏆 Best Educator Award 2020</li>
+            <li>📖 Authored 10+ Research Papers</li>
+            <li>🎓 Guided 5000+ Students</li>
+        </ul>
+    </section>
+
+    <section class="testimonials">
+        <h2>What People Say</h2>
+        <div class="testimonial-slider">
+            <div class="testimonial">
+                <p>"One of the best mentors and visionary leaders!"</p>
+                <span>- Dr. Anjali Verma</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <h2>Contact</h2>
+        
+        <!-- Success Message -->
+        <div class="success-message" id="successMessage">
+            ✅ Your message has been successfully sent!
+        </div>
+
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message"></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 KANPUR INSTITUTE OF TECHNOLOGY College. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Form Submission -->
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Stop form from refreshing the page
+            
+            // Show success message
+            var successMessage = document.getElementById("successMessage");
+            successMessage.style.display = "block";
+
+            // Clear form fields
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("message").value = "";
+
+            // Hide success message after 3 seconds
+            setTimeout(() => {
+                successMessage.style.display = "none";
+            }, 3000);
+        });
+    </script>
+
+</body>
+</html>

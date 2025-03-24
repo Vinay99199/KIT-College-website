@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="top-bar">
+            <span>Welcome to KANPUR INSTITUTE OF TECHNOLOGY | Excellence in Education &nbsp; &nbsp;&nbsp; &nbsp; <span>☎️ Admission Helpline : 1001 100 101 &nbsp; &nbsp;  📞Reception Desk : 1234 100 123</span></span>
+        </div>
+        <!-- <div class="top-bar">
+            <span>☎️ Admission Helpline : 1001 100 101 &nbsp; &nbsp; &nbsp; &nbsp;   📞Reception Desk : 1234 100 123</span>
+        </div> -->
+        
+        <nav>
+            <div class="nav-container">
+                <a href="https://www.kit.ac.in/"> <img  src="photos/KIT-Autonomous-full-name (1).jpg" alt="College Logo" class="logo"></a>
+                <!-- <img  src="photos/kit logo.jpg" alt="College Logo" class="logo"> -->
+                <button class="menu-button" onclick="toggleMenu()">☰</button>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li class="dropdown">
+                        <a href="about.html">About Us</a>
+                        <ol class="dropdown-content">
+                            <li><a href="#history">History</a></li>
+                            <li><a href="#mission">Mission & Vision</a></li>
+                            <li><a href="#team">Our Team</a></li>
+                        </ol>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Courses</a>
+                        <ol class="dropdown-content">
+                            <li><a href="#undergraduate">Undergraduate</a></li>
+                            <li><a href="#postgraduate">Postgraduate</a></li>
+                            <li><a href="#diploma">Diploma</a></li>
+                        </ol>
+                    </li>
+                    <li><a href="#faculty">Faculty</a></li>
+                    <li><a href="conact.html">Contact</a></li>
+                    <li><a href="signin.html" class="sign-in">Sign In</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- College Image -->
+    <div class="school-image-container">
+        <img src="photos/collegeimg.webp" alt="College Campus" class="school-image">
+    </div>
+    
+    <main>
+        <section id="home" class="section">
+            <h1>Welcome to KANPUR INSTITUTE OF TECHNOLOGY</h1>
+            <p>Providing quality education for a better future.</p>
+            <a href="addmission.html" class="apply-btn">Apply Now</a>
+        </section>
+
+        <section id="about" class="section">
+            <h2>About Our College</h2>
+            <a href="about.html" class="apply-btn">Click here for more information</a>
+            <p>KANPUR INSTITUTE OF TECHNOLOGY has been a leader in education since 2005. We provide top-class facilities and experienced faculty.</p>
+        </section>
+
+        <!-- Faculty Section -->
+        <section id="faculty" class="section">
+            <h2>About Owner</h2>
+            <div class="faculty-container">
+                <div class="faculty-card">
+                    <a href="collegeOwner.html"><img src="photos/vinay.jpeg" alt="Sangeeta"></a>
+                    <!-- <img src="photos/vinay.jpeg" alt="Sangeeta"> -->
+                    <p>Vinay Jaiswal - Founder & Chairman</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Faculty Section -->
+        <section id="faculty" class="section">
+            <h2>Our Faculty</h2>
+            <div class="faculty-container">
+                <div class="faculty-card">
+                    <img src="photos/nitu.jpg" alt="nitu">
+                    <p>Dr. Nitu Singh - Dean</p>
+                </div>
+
+                <div class="faculty-card">
+                    <img src="photos/teach.jpg" alt="Sangeeta">
+                    <p>Dr. Deepak Jha - Director</p>
+                </div>
+                
+                <div class="faculty-card">
+                    <img src="photos/sangeeta.avif" alt="Sangeeta">
+                    <p>Sangeeta - Professor</p>
+                </div>
+                <div class="faculty-card">
+                    <img src="photos/hod.jpg" alt="HOD">
+                    <p>Dr.Rahul - HOD</p>
+                </div>
+                <div class="faculty-card">
+                    <img src="photos/sommath.avif" alt="Sommath">
+                    <p>Sommath - Lecturer</p>
+                </div>
+                <div class="faculty-card">
+                    <img src="photos/sukhsagar.jpg" alt="Sukhsagar">
+                    <p>Sukhsagar - Assistant Professor</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; KANPUR INSTITUTE OF TECHNOLOGY | All Rights Reserved</p>
+        <div class="social-media">
+            <a href="https://www.facebook.com/profile.php?id=100093628620064"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/vinayjaiswal9919/"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/vinay-jaiswal-1b470b297/"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-telegram"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>
